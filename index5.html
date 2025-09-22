@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script5.js" defer></script>
+    <link rel="stylesheet" href="index5.css">
+    
+</head>
+
+<body>
+   <button class="add-to-cart">Zapisz produkty do koszyka</button>
+   <!-- <button class="remove-from-cart">Usuń produkty z koszyka</button>
+   <button class="calculate-total">Oblicz łączną wartość koszyka</button> -->
+   <!-- <div class="cart">
+    <ul>
+        <li class="cart-item1" data-price="10">10</li>
+        <li class="cart-item2" data-price="20">20</li>
+        <li class="cart-item3" data-price="30">40</li>
+    </ul>
+   </div>
+</body>
+
+</html> --> -->
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <title>Fetch demo: GET / POST / DELETE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { font-family: system-ui, Arial, sans-serif; }
+    body { margin: 24px; }
+    h1 { margin: 0 0 12px; }
+    .panel { display: grid; gap: 12px; margin-bottom: 16px; }
+    form { display: grid; gap: 8px; max-width: 520px; }
+    input, textarea { padding: 8px; border: 1px solid #ccc; border-radius: 8px; }
+    button { padding: 8px 12px; border: 0; border-radius: 8px; cursor: pointer; }
+    button.primary { background: #0b5; color: white; }
+    button.secondary { background: #eee; }
+    button.danger { background: #e33; color: white; }
+    .row { display: flex; gap: 8px; align-items: center; }
+    .list { display: grid; gap: 10px; }
+    .card {
+      border: 1px solid #ddd; border-radius: 12px; padding: 12px;
+      display: grid; gap: 6px; background: #fafafa;
+    }
+    .muted { color: #666; font-size: 12px; }
+    .loader { display: none; }
+    .loader.show { display: inline-block; }
+    .error { color: #b00020; }
+    .sr-only { position: absolute; left: -9999px; }
+  </style>
+   <script src="script5.js" async></script>
+</head>
+<body>
+  <h1>📡 Fetch + JSONPlaceholder</h1>
+
+  <section class="panel">
+    <div class="row">
+      <button id="refreshBtn" class="secondary">🔄 Odśwież listę</button>
+      <span id="loader" class="loader">Ładowanie…</span>
+      <span id="error" class="error" role="alert"></span>
+    </div>
+
+    <form id="createForm" autocomplete="off">
+      <h2>➕ Dodaj nowy post (POST)</h2>
+      <label>
+        <span class="sr-only">Tytuł</span>
+        <input id="title" name="title" placeholder="Tytuł" required />
+      </label>
+      <label>
+        <span class="sr-only">Treść</span>
+        <textarea id="body" name="body" placeholder="Treść…" rows="3" required></textarea>
+      </label>
+      <div class="row">
+        <button class="primary createBtn" type="submit">Wyślij POST</button>
+        <small class="muted">Używamy API testowego – operacje są symulowane.</small>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h2>📜 Posty (GET /posts)</h2>
+    <div id="list" class="list" aria-live="polite"></div>
+  </section>
+
+  <template id="postTemplate">
+    <article class="card">
+      <strong class="title"></strong>
+      <p class="body"></p>
+      <div class="row">
+        <button class="danger deleteBtn">Usuń (DELETE)</button>
+        <span class="muted id"></span>
+      </div>
+    </article>
+  </template>
+
+  <script src="./app.js" type="module"></script>
+  <noscript>Ta aplikacja wymaga JavaScript.</noscript>
+</body>
+</html>
