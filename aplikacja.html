@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pogoda (fetch)</title>
+  <script src="aplikacja.js" async></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 20px;
+      background: #f7f7fb;
+    }
+
+    .box {
+      max-width: 680px;
+      background: #fff;
+      border: 1px solid #e9e9ef;
+      border-radius: 10px;
+      padding: 16px;
+      margin: auto;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    form {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #dcdde3;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 0;
+      background: #111827;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .error {
+      background: #fff1f1;
+      color: #7a1f1f;
+      border: 1px solid #ffd0d0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .tile {
+      border: 1px solid #eef0f5;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 8px;
+      background: #fafbfe;
+    }
+
+    small {
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>🌤️ Pogoda (HTML + fetch)</h1>
+    <p>Wpisz nazwę miasta i kliknij</p>
+
+    <form id="form">
+      <input id="city" type="text" placeholder="Nazwa miasta" />
+      <label for="dayCounts"> Wybierz ile dni prognozy:</label>
+      <!-- <select name="dayCounts" id="dayCounts">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select> -->
+      <input type="number" id="dayCounts" name="dayCounts" min="1" max="5" >
+      <button id="btn" type="submit">Sprawdź</button>
+    </form>
+
+    <div id="status"></div>
+    <div id="result"></div>
+  </div>
+</body>
+
+</html>
